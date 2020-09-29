@@ -1,5 +1,6 @@
 ##!/bin/bash -x
 declare -A Operations
+index=0
 read -p "Enter the first number: " a
 read -p "Enter the second number: " b
 read -p "Enter the third number: " c
@@ -18,4 +19,9 @@ Operations[op3]=$op3
 Operations[op4]=$op4
 
 echo "The results in dictionary : "${Operations[@]}
+for b in ${Operations[@]}
+do
+	array[((index++))]=$b
+done
+echo "Array elements are: "${array[@]}
 
